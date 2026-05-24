@@ -1,89 +1,107 @@
 # Libft C Library
 
-Archived 42 School / School 21 project implementing a custom C library with common standard-library functions and linked-list utilities.
+[![Build](https://img.shields.io/github/actions/workflow/status/itkrivoshei/libft-c-library/build.yml?branch=master&style=flat-square)](https://github.com/itkrivoshei/libft-c-library/actions/workflows/build.yml)
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
+![C](https://img.shields.io/badge/C-Static%20Library-555555?style=flat-square)
 
-## Overview
+A small C static library implementing common standard-library-style functions and linked-list utilities.
 
-Libft is an early C programming project focused on rebuilding commonly used C standard-library functions from scratch.
+## Stack
 
-The project demonstrates low-level programming fundamentals, manual memory management, string handling, linked-list operations, and Makefile-based compilation.
+- C
+- Makefile
+- GCC-compatible compiler
 
-## Features
+## Scope
 
-- Custom implementations of common C library functions
-- String manipulation utilities
-- Memory manipulation utilities
-- Character-checking functions
-- Output helper functions
-- Linked-list utilities
-- Static library build with Makefile
+The library includes custom implementations for:
 
-## Function Categories
+- character checks
+- string utilities
+- memory utilities
+- output helpers
+- linked-list operations
 
-- Character checks: `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`
-- String functions: `ft_strlen`, `ft_strcpy`, `ft_strdup`, `ft_strcmp`, `ft_strjoin`, `ft_strsplit`
-- Memory functions: `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memalloc`
-- Output functions: `ft_putchar`, `ft_putstr`, `ft_putendl`, `ft_putnbr`
-- Linked-list functions: `ft_lstnew`, `ft_lstadd`, `ft_lstdel`, `ft_lstiter`, `ft_lstmap`
+The project builds a static archive:
 
-## Project Structure
+```txt
+libft.a
+```
 
-    .
-    ├── Makefile
-    ├── libft.h
-    ├── ft_*.c
-    ├── author
-    ├── LICENSE
-    └── README.md
+## Requirements
+
+- `make`
+- `gcc` or another compatible C compiler
+- `ar`
+- `ranlib`
 
 ## Build
 
-To compile the static library:
+```bash
+make
+```
 
-    make
+## Clean
 
-This generates:
+Remove object files:
 
-    libft.a
+```bash
+make clean
+```
 
-To remove object files:
+Remove object files and the static library:
 
-    make clean
+```bash
+make fclean
+```
 
-To remove object files and the compiled library:
+Rebuild from a clean state:
 
-    make fclean
+```bash
+make re
+```
 
-To rebuild the project:
+## Verify
 
-    make re
+Run the same build lifecycle used by CI:
+
+```bash
+make fclean
+make
+test -f libft.a
+make clean
+! find . -name '*.o' -print -quit | grep -q .
+make re
+test -f libft.a
+```
 
 ## Usage
 
-Include the main header file in your C source files:
+Include the header:
 
-    #include "libft.h"
+```c
+#include "libft.h"
+```
 
-Compile your program with the generated static library:
+Compile a program with the static library:
 
-    gcc main.c libft.a -o program
+```bash
+gcc main.c libft.a -o program
+```
 
-## Skills Demonstrated
+## Project structure
 
-- C programming
-- Manual memory management
-- String and memory manipulation
-- Linked-list implementation
-- Static library creation
-- Makefile usage
-- Low-level programming fundamentals
-
-## Status
-
-This repository is archived and kept public as part of my early engineering background from 42 School / School 21.
-
-It is not actively maintained.
+```txt
+.
+├── .github/workflows/build.yml
+├── Makefile
+├── libft.h
+├── ft_*.c
+├── author
+├── LICENSE
+└── README.md
+```
 
 ## License
 
-This project is licensed under the GPL-3.0 License. See the LICENSE file for details.
+This project is licensed under the [GPL-3.0 License](LICENSE).
