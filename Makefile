@@ -10,10 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: NAME CC INCL FLAGS SRC OBJ all clean fclean re
+.PHONY: all clean fclean re
 
 NAME	= libft.a
 CC		= gcc
+AR		= ar
+ARFLAGS	= rc
+RANLIB	= ranlib
+RM		= rm -f
 INCL	= ./
 FLAGS	= -Wall -Werror -Wextra -I $(INCL) -c
 
@@ -45,7 +49,6 @@ SRC		= ft_atoi.c			\
 		  ft_memdel.c		\
 		  ft_strnew.c		\
 		  ft_putchar.c		\
-		  ft_strtrim.c		\
 		  ft_strtrim.c		\
 		  ft_tolower.c		\
 		  ft_toupper.c		\
@@ -81,20 +84,20 @@ SRC		= ft_atoi.c			\
 		  ft_isplwspace.c	\
 		  ft_putchar_fd.c	\
 		  ft_putendl_fd.c	\
-		  ft_isallwspace.c	\
+		  ft_isallwspace.c
 
 OBJ 	= $(SRC:.c=.o)
 
 all:	$(NAME)
 
 $(NAME): $(OBJ)
-	@ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
+	$(RANLIB) $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
