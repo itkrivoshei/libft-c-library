@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: |
+          gcc --version
+          make --version
+
+      - name: Build static library
+        run: |
+          make fclean
+          make
+          test -f libft.a
+
+      - name: Clean object files
+        run: |
+          make clean
+          ! find . -name '*.o' -print -quit | grep -q .
+
+      - name: Rebuild static library
+        run: |
+          make re
+          test -f libft.a
