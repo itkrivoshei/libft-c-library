@@ -1,109 +1,59 @@
 # Libft C Library
 
-[![Build](https://img.shields.io/github/actions/workflow/status/itkrivoshei/libft-c-library/build.yml?branch=master&style=flat-square)](https://github.com/itkrivoshei/libft-c-library/actions/workflows/build.yml)
+[![Build](https://img.shields.io/github/actions/workflow/status/itkrivoshei/libft-c-library/build.yml?branch=master&style=flat-square&label=build&logo=githubactions&logoColor=white)](https://github.com/itkrivoshei/libft-c-library/actions/workflows/build.yml)
+[![C](https://img.shields.io/badge/C-static%20library-555?style=flat-square&logo=c&logoColor=white)](libft.h)
+[![Make](https://img.shields.io/badge/Make-libft.a-427819?style=flat-square&logo=gnu&logoColor=white)](Makefile)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
-![C](https://img.shields.io/badge/C-Static%20Library-555555?style=flat-square)
 
-A small C static library implementing common standard-library-style functions and linked-list utilities.
+Static C library with standard-library-style functions, memory helpers, string utilities, output helpers, and linked-list operations.
 
-## Stack
+## API Surface
 
-- C
-- Makefile
-- GCC-compatible compiler
+| Group | Examples |
+| --- | --- |
+| Character checks | `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isprint` |
+| String utilities | `ft_strlen`, `ft_strdup`, `ft_strjoin`, `ft_strsplit`, `ft_strtrim` |
+| Memory utilities | `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memalloc` |
+| Output helpers | `ft_putchar`, `ft_putstr`, `ft_putendl`, `ft_putnbr` |
+| File-descriptor output | `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd` |
+| Linked lists | `ft_lstnew`, `ft_lstadd`, `ft_lstdel`, `ft_lstiter`, `ft_lstmap` |
 
-## Scope
-
-The library includes custom implementations for:
-
-- character checks
-- string utilities
-- memory utilities
-- output helpers
-- linked-list operations
-
-The project builds a static archive:
-
-```txt
-libft.a
-```
-
-## Requirements
-
-- `make`
-- `gcc` or another compatible C compiler
-- `ar`
-- `ranlib`
+Header: [`libft.h`](libft.h)
 
 ## Build
 
 ```bash
+git clone https://github.com/itkrivoshei/libft-c-library.git
+cd libft-c-library
 make
 ```
 
-## Clean
+The build creates:
 
-Remove object files:
-
-```bash
-make clean
+```text
+libft.a
 ```
 
-Remove object files and the static library:
-
-```bash
-make fclean
-```
-
-Rebuild from a clean state:
-
-```bash
-make re
-```
-
-## Verify
-
-Run the same build lifecycle used by CI:
-
-```bash
-make fclean
-make
-test -f libft.a
-make clean
-! find . -name '*.o' -print -quit | grep -q .
-make re
-test -f libft.a
-```
-
-## Usage
-
-Include the header:
+## Use In Another Program
 
 ```c
 #include "libft.h"
 ```
 
-Compile a program with the static library:
-
 ```bash
 gcc main.c libft.a -o program
 ```
 
-## Project structure
+## Maintenance Commands
 
-```txt
-.
-├── .github/workflows/build.yml
-├── Makefile
-├── libft.h
-├── ft_*.c
-├── author
-├── LICENSE
-└── README.md
-```
+| Command | Purpose |
+| --- | --- |
+| `make clean` | Remove object files |
+| `make fclean` | Remove object files and `libft.a` |
+| `make re` | Clean and rebuild |
+
+CI runs a full build, cleans object files, and rebuilds the static archive.
 
 ## License
 
-This project is licensed under the [GPL-3.0 License](LICENSE).
-
-## How to run\n\nPlease see project files for instructions.\n
+[GPL-3.0](LICENSE)
