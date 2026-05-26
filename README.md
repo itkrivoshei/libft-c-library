@@ -105,3 +105,5 @@ gcc main.c libft.a -o program
 ## License
 
 This project is licensed under the [GPL-3.0 License](LICENSE).
+
+## How to run\n\nPlease see project files for instructions.\n
