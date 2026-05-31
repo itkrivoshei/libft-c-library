@@ -1,6 +1,6 @@
 # Libft C Library
 
-[![Build](https://img.shields.io/github/actions/workflow/status/itkrivoshei/libft-c-library/build.yml?branch=master&style=flat-square&label=build&logo=githubactions&logoColor=white)](https://github.com/itkrivoshei/libft-c-library/actions/workflows/build.yml)
+[![Build](https://img.shields.io/github/actions/workflow/status/itkrivoshei/libft-c-library/build.yml?branch=main&style=flat-square&label=build&logo=githubactions&logoColor=white)](https://github.com/itkrivoshei/libft-c-library/actions/workflows/build.yml)
 [![C](https://img.shields.io/badge/C-static%20library-555?style=flat-square&logo=c&logoColor=white)](libft.h)
 [![Make](https://img.shields.io/badge/Make-libft.a-427819?style=flat-square&logo=gnu&logoColor=white)](Makefile)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
