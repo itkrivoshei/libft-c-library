@@ -1,11 +1,16 @@
+<div align="center">
+
 # Libft C Library
 
-[![Build](https://img.shields.io/github/actions/workflow/status/itkrivoshei/libft-c-library/build.yml?branch=main&style=flat-square&label=build&logo=githubactions&logoColor=white)](https://github.com/itkrivoshei/libft-c-library/actions/workflows/build.yml)
-[![C](https://img.shields.io/badge/C-static%20library-555?style=flat-square&logo=c&logoColor=white)](libft.h)
-[![Make](https://img.shields.io/badge/Make-libft.a-427819?style=flat-square&logo=gnu&logoColor=white)](Makefile)
-[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
-
 Static C library with standard-library-style functions, memory helpers, string utilities, output helpers, and linked-list operations.
+
+[![Build](https://img.shields.io/github/actions/workflow/status/itkrivoshei/libft-c-library/build.yml?branch=main&style=for-the-badge&label=build&logo=githubactions&logoColor=white)](https://github.com/itkrivoshei/libft-c-library/actions/workflows/build.yml)
+[![CodeQL](https://img.shields.io/github/actions/workflow/status/itkrivoshei/libft-c-library/codeql.yml?branch=main&style=for-the-badge&label=codeql&logo=github&logoColor=white)](https://github.com/itkrivoshei/libft-c-library/actions/workflows/codeql.yml)
+[![C](https://img.shields.io/badge/C-static%20library-555?style=for-the-badge&logo=c&logoColor=white)](libft.h)
+[![Make](https://img.shields.io/badge/Make-libft.a-427819?style=for-the-badge&logo=gnu&logoColor=white)](Makefile)
+[![License](https://img.shields.io/github/license/itkrivoshei/libft-c-library?style=for-the-badge)](LICENSE)
+
+</div>
 
 ## API Surface
 
